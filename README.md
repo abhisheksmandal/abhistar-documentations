@@ -1,4 +1,4 @@
-# Abhistar Documentation Repository
+# AbhiStar Documentation Repository
 
 A personal knowledge repository containing my documentation, guides, notes, and technical references. Created to organize information efficiently and make it easily accessible whenever needed. This repo helps me track solutions, configurations, and learning progress across various technologies.
 
