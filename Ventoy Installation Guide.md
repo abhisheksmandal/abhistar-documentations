@@ -26,14 +26,14 @@ Ventoy is an open-source tool for creating bootable USB drives that can host mul
 ### 3.1 Download Ventoy
 
 ```bash
-wget https://github.com/ventoy/Ventoy/releases/download/v1.0.97/ventoy-1.0.97-linux.tar.gz
+wget $(curl -s https://api.github.com/repos/ventoy/Ventoy/releases/latest | grep -oP '"browser_download_url": "\K(.*?ventoy-.*?-linux.tar.gz)(?=")')
 ```
 
 ### 3.2 Extract the Archive
 
 ```bash
-tar xzf ventoy-1.0.97-linux.tar.gz
-cd ventoy-1.0.97
+tar xzf ventoy-*-linux.tar.gz
+cd ventoy-*-linux   
 ```
 
 ### 3.3 Identify USB Drive
