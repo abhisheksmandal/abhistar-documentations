@@ -33,7 +33,7 @@ wget $(curl -s https://api.github.com/repos/ventoy/Ventoy/releases/latest | grep
 
 ```bash
 tar xzf ventoy-*-linux.tar.gz
-cd ventoy-*-linux   
+cd $(ls -d ventoy-* | grep -v '.tar.gz')   
 ```
 
 ### 3.3 Identify USB Drive
