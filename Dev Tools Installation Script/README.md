@@ -21,16 +21,19 @@ This script automates the setup of a complete development environment on Debian-
 ## Usage
 
 1. Download the script:
+
    ```bash
-   wget -O setup-dev-env.sh https://your-hosting-url.com/setup-dev-env.sh
+   wget -O setup-dev-env.sh https://github.com/abhisheksmandal/abhistar-documentations/blob/main/Dev%20Tools%20Installation%20Script/setup-dev-env.sh
    ```
 
 2. Make the script executable:
+
    ```bash
    chmod +x setup-dev-env.sh
    ```
 
 3. Run the script:
+
    ```bash
    ./setup-dev-env.sh
    ```
