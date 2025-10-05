@@ -1,67 +1,121 @@
-# Development Environment Setup
+# 🚀 Development Environment Setup
 
-This script automates the setup of a complete development environment on Debian-based Linux systems (Ubuntu, Linux Mint, etc.).
+[![Shell Script](https://img.shields.io/badge/Shell-Bash-blue?logo=gnu-bash&logoColor=white)](https://www.gnu.org/software/bash/)
+[![Platform](https://img.shields.io/badge/Platform-Ubuntu%20%7C%20Debian-brightgreen?logo=ubuntu)](https://ubuntu.com/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Maintained](https://img.shields.io/badge/Maintained-Yes-success)]()
+[![Made with ❤️ by AbhiStar](https://img.shields.io/badge/Made%20with%E2%9D%A4%EF%B8%8F-by%20AbhiStar-purple)]()
 
-## What It Installs
+Automate the setup of a **complete development environment** on Debian-based Linux systems (Ubuntu, Linux Mint, Pop!_OS, etc.) — pre-configured with all the tools a developer needs.  
 
-- **System Updates**: Updates and upgrades all system packages
-- **Development Tools**: git, curl, wget, build-essential, htop, neofetch, zsh, tmux
-- **Web Browser**: Google Chrome (with auto-updates)
-- **Code Editor**: Visual Studio Code (with auto-updates)
-- **API Testing**: Postman
-- **Media Player**: VLC
-- **Package Manager**: Flatpak with Flathub repository
+---
 
-## Prerequisites
+## ⚡ Quick Install
 
-- A Debian-based Linux distribution (Ubuntu, Linux Mint, etc.)
-- Administrative (sudo) privileges
-- Internet connection
+Copy and paste this **one-liner** in your terminal 👇  
 
-## Usage
+```bash
+bash <(wget -qO- https://raw.githubusercontent.com/abhisheksmandal/abhistar-documentations/main/Dev%20Tools%20Installation%20Script/setup-dev-env.sh)
+```
 
-1. Download the script:
+> 💡 The script will automatically install and configure everything — no manual steps needed.
 
+---
+
+## 🧩 What It Installs
+
+### 🧰 Core System Tools
+- System update and upgrade
+- `git`, `curl`, `wget`, `build-essential`, `zsh`, `vim`, `tmux`
+- `htop`, `neofetch`, `figlet`, `toilet`, `toilet-fonts`
+
+### 🖥️ Terminal & CLI Utilities
+| Category | Tools |
+|-----------|-------|
+| Archive | `zip`, `unzip`, `tar` |
+| Network | `net-tools`, `dnsutils`, `lsof`, `nmap`, `netcat-openbsd`, `traceroute`, `whois` |
+| File/System | `tree`, `ncdu`, `fzf`, `exa`, `bat`, `jq` |
+
+### 🌐 Web & Development Applications
+- **Google Chrome** (auto-updating via official repo)  
+- **Visual Studio Code** (auto-updating via official repo)  
+- **Postman** (via Snap)  
+- **FileZilla** (FTP/SFTP GUI client)  
+- **OpenSSH Server** (installed, enabled, and started)  
+- **VLC Media Player**  
+- **Flatpak** with the **Flathub** repository pre-added  
+
+---
+
+## ⚙️ Prerequisites
+
+- Debian-based Linux distro (Ubuntu, Mint, Pop!_OS, etc.)
+- `sudo` privileges  
+- Active internet connection  
+
+---
+
+## 🪄 Manual Installation (Optional)
+
+If you prefer to download and execute manually:
+
+```bash
+wget -O setup-dev-env.sh https://raw.githubusercontent.com/abhisheksmandal/abhistar-documentations/main/Dev%20Tools%20Installation%20Script/setup-dev-env.sh
+chmod +x setup-dev-env.sh
+./setup-dev-env.sh
+```
+
+---
+
+## 💡 Notes
+
+- The script stops immediately on any error (`set -e`)
+- All software from official repositories will **auto-update**
+- **Postman** and other Snap apps update automatically  
+- **SSH Server** is enabled and starts on boot  
+- Safe to rerun — existing tools will be skipped  
+
+---
+
+## 🧠 Customization
+
+You can easily tailor the script to your setup:
+
+- Add more APT packages:
+  ```bash
+  sudo apt install -y <package-name>
+  ```
+- Add Snap apps:
+  ```bash
+  sudo snap install <app-name>
+  ```
+- Add Flatpak apps:
+  ```bash
+  sudo flatpak install flathub <app-id>
+  ```
+
+---
+
+## 🧰 Troubleshooting
+
+If something doesn’t work:
+
+1. Check your internet connection  
+2. Ensure you have sudo privileges  
+3. Fix broken dependencies:
    ```bash
-   wget -O setup-dev-env.sh https://raw.githubusercontent.com/abhisheksmandal/abhistar-documentations/main/Dev%20Tools%20Installation%20Script/setup-dev-env.sh
+   sudo apt update && sudo apt --fix-broken install
    ```
+4. Re-run individual sections of the script manually  
 
-2. Make the script executable:
+---
 
-   ```bash
-   chmod +x setup-dev-env.sh
-   ```
+## 🎉 Credits
 
-3. Run the script:
+Created with ❤️ by **[AbhiStar](https://github.com/abhisheksmandal)**  
+💡 “You can thank AbhiStar later! 🚀✨”  
 
-   ```bash
-   ./setup-dev-env.sh
-   ```
+---
 
-4. Enter your password when prompted for sudo access.
-
-5. Wait for the installation to complete. You'll see confirmation messages as each component is installed.
-
-## Notes
-
-- The script will exit if any command fails (using `set -e`)
-- All installed applications will receive automatic updates
-- Google Chrome and VS Code are installed via their official repositories
-- Postman is installed using Snap
-- Flatpak provides access to additional applications through the Flathub repository
-
-## Customization
-
-You can modify the script to add or remove packages based on your needs:
-
-- To add more packages to the essential tools, modify the `apt install` line
-- To install additional Snap packages, add more `sudo snap install` commands
-- To install Flatpak applications, add `sudo flatpak install flathub [application-id]` commands
-
-## Troubleshooting
-
-If you encounter any issues:
-
-1. Check your internet connection
-2. Ensure you have sudo privileges
-3. Try running individual sections of the script manually to identify where the error occurs
+### 📄 License
+This project is licensed under the [MIT License](LICENSE).

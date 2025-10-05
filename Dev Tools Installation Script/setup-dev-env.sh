@@ -20,6 +20,17 @@ echo "Installing essential development tools..."
 sudo apt install -y curl wget git vlc flatpak htop neofetch zsh vim tmux build-essential figlet toilet toilet-fonts
 print_done "Essential tools installed"
 
+# -----------------------------
+# 🧰 Terminal & CLI Utilities
+# -----------------------------
+echo "Installing terminal utilities..."
+sudo apt install -y unzip zip tar jq tree net-tools dnsutils fzf bat exa ncdu lsof nmap netcat-openbsd traceroute whois
+print_done "Terminal utilities installed"
+
+# -----------------------------
+# 🌐 Browsers & Editors
+# -----------------------------
+
 # Install Google Chrome (with auto-updates)
 echo "Adding Google Chrome repository..."
 wget -qO- https://dl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor -o /usr/share/keyrings/google-chrome-keyring.gpg
@@ -36,26 +47,52 @@ sudo apt update
 sudo apt install -y code
 print_done "VS Code installed (with updates enabled)"
 
+# -----------------------------
+# 💻 Developer Tools
+# -----------------------------
 # Install Postman via Snap
 echo "Installing Postman..."
 sudo snap install postman
 print_done "Postman installed"
+
+# Install FileZilla
+echo "Installing FileZilla..."
+sudo apt install -y filezilla
+print_done "FileZilla installed"
+
+# Install and enable OpenSSH Server
+echo "Installing OpenSSH server..."
+sudo apt install -y openssh-server
+sudo systemctl enable ssh
+sudo systemctl start ssh
+print_done "OpenSSH server installed and enabled"
 
 # Install VLC
 echo "Installing VLC..."
 sudo apt install -y vlc
 print_done "VLC installed"
 
-# Install Flatpak and Add Flathub Repository
+# -----------------------------
+# 📦 Flatpak Setup
+# -----------------------------
 echo "Installing Flatpak..."
 sudo apt install -y flatpak
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 print_done "Flatpak installed and Flathub repository added"
 
-# Final Message - Big Font
+# -----------------------------
+# 🧹 System Cleanup
+# -----------------------------
+echo "Cleaning up..."
+sudo apt autoremove -y && sudo apt clean
+print_done "System cleaned up"
+
+# -----------------------------
+# 🎉 Final Message
+# -----------------------------
 echo -e "\n🎉 \e[1;32mAll development tools have been installed successfully!\e[0m 🚀\n"
 
-# Print fancy thank you message
+# Fancy thank you banner
 echo -e "\e[1;35m"
 toilet -f big -F metal "AbhiStar"
 echo -e "\e[0m💡 😎 You can thank AbhiStar later! 🚀✨\n"
